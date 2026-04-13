@@ -1,6 +1,6 @@
-url: "https://humanfactors-lab.github.io"
+url: "https://human-factors-lab.github.io"
 baseurl: ""
-title: "Humanfactorslab" # the name of your site, e.g. ACME Corp.
+title: "OU HFS Lab"
 encoding: utf-8
 
 # Disable the default primer theme from github-pages
@@ -11,6 +11,9 @@ collections:
     output: false
   members:
     output: false
+  projects:
+    output: true
+    permalink: /research/:name/
 
 defaults:
   -
@@ -19,13 +22,21 @@ defaults:
     values:
       layout: single
       header:
-        background-image: /assets/img/header-background/zion-shorter.jpg
+        background-image: /assets/img/ouhfs/home/scanpathtower.jpg
   -
     scope:
       path: ""
       type: posts
     values:
       layout: post
+  -
+    scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+      header:
+        background-image: /assets/img/ouhfs/home/scanpathtower.jpg
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

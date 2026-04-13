@@ -1,0 +1,77 @@
+---
+layout: default
+---
+
+{% if page.header %}
+  {% include page__hero.html %}
+{% endif %}
+
+<section class="section pt-lg-0 mt--250">
+  <div class="container">
+    <div class="card card-profile shadow px-4 py-4">
+      <div class="lab-project-back">
+        <a href="{{ '/research.html' | relative_url }}">Back to project directory</a>
+      </div>
+
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-4 mb-lg-0">
+          <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="lab-image">
+        </div>
+        <div class="col-lg-7">
+          <div class="lab-kicker">{{ page.funder }}</div>
+          <h1>{{ page.title }}</h1>
+          <p>{{ page.overview }}</p>
+          {% if page.tags %}
+          <ul class="lab-inline-list">
+            {% for tag in page.tags %}
+            <li>{{ tag }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-8">
+          <div class="lab-card">
+            <h3>Project scope</h3>
+            <p>{{ page.card_summary }}</p>
+            {% if page.details %}
+            <ul class="lab-list-tight">
+              {% for detail in page.details %}
+              <li>{{ detail }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-lg-4 mt-4 mt-lg-0">
+          <div class="lab-card">
+            <h3>Researchers</h3>
+            {% if page.researchers %}
+            <ul class="lab-list-tight">
+              {% for researcher in page.researchers %}
+              <li>{{ researcher }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {% if content and content != "" %}
+      <div class="mt-4">
+        {{ content }}
+      </div>
+      {% endif %}
+
+      {% if page.gallery %}
+      <div class="lab-image-grid">
+        {% for image in page.gallery %}
+        <img src="{{ image | relative_url }}" alt="{{ page.title }} supporting image {{ forloop.index }}" class="lab-image">
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

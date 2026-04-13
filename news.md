@@ -3,7 +3,9 @@ layout: single
 title: News
 header:
   title: News <a href="{{ site.baseurl }}/feed.xml"><i class="fa fa-rss"></i></a>
-  background-image: /assets/img/header-background/zion-shorter.jpg
+  excerpt: >
+    Updates on funding, projects, publications, awards, and other milestones from the Human Factors and Simulation Laboratory.
+  background-image: /assets/img/ouhfs/home/scanpathtower.jpg
 ---
 
 <ul class="post-list">

@@ -13,18 +13,29 @@
             {% endif %}
             <div class="col-lg-4">
               <div class="card card-lift--hover shadow border-0">
-                <div class="card-body py-5">
+                <div class="card-body py-5{% if f.icon_only %} lab-feature-card--icon-only{% endif %}">
+                  {% if f.icon_only %}
+                  <a href="{{ f_url }}" class="icon icon-shape icon-shape-{{ f.icon_color}} rounded-circle mb-0 lab-feature-icon-link" aria-label="Open research projects">
+                  {% else %}
                   <div class="icon icon-shape icon-shape-{{ f.icon_color}} rounded-circle mb-4">
+                  {% endif %}
+                    {% if f.icon_image %}
+                    <img src="{{ f.icon_image | relative_url }}" alt="{{ f.title }} icon" class="lab-feature-icon-image">
+                    {% else %}
                     <i class="{{ f.icon }}"></i>
+                    {% endif %}
+                  {% if f.icon_only %}
+                  </a>
+                  {% else %}
                   </div>
+                  {% endif %}
+                  {% unless f.icon_only %}
                   <h6 class="text-{{ f.color }} text-uppercase">{{ f.title }}</h6>
                   <p class="description mt-3">{{ f.excerpt | markdownify }}</p>
-                  <!-- <div>
-                    {% for b in f.badge %}
-                      <span class="badge badge-pill badge-{{ f.badge_color }}">{{ b }}</span>
-                    {% endfor %}
-                  </div> -->
+                  {% endunless %}
+                  {% if f.btn_label %}
                   <a href="{{ f_url }}" class="btn btn-{{ f.color }} {{ f.btn_class }}">{{ f.btn_label }}</a>
+                  {% endif %}
                 </div>
               </div>
             </div>

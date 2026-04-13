@@ -1,81 +1,58 @@
-    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
-      <div class="container">
-        <a class="navbar-brand mr-lg-4" href="{{ "/index.html" | relative_url }}">
-          <img src="{{ "/assets/img/brand/ucds-wordmark-dark.png" | relative_url }}">
-        </a>
-        <!-- Small menu button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global"
-          aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse" id="navbar_global">
-          <!-- Small menu header -->
-          <div class="navbar-collapse-header">
-            <div class="row">
-              <div class="col-6 collapse-brand">
-                <a href="{{ "/index.html" | relative_url }}">
-                  <img src="{{ "/assets/img/brand/ucds-wordmark-light.png" | relative_url }}">
-                </a>
-              </div>
-              <div class="col-6 collapse-close">
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global"
-                  aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
-                  <span></span>
-                  <span></span>
-                </button>
-              </div>
-            </div>
+{% capture current_url %}{{ page.url | replace: 'index.html', '' }}{% endcapture %}
+<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-dark headroom">
+  <div class="container">
+    <a class="navbar-brand mr-lg-4 lab-brand" href="{{ "/index.html" | relative_url }}">
+      <span class="lab-brand__title">OU HFS Lab</span>
+      <span class="lab-brand__subtitle">Human Factors and Simulation Laboratory</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global"
+      aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbar_global">
+      <div class="navbar-collapse-header">
+        <div class="row">
+          <div class="col-8 collapse-brand">
+            <a class="lab-brand lab-brand--collapsed" href="{{ "/index.html" | relative_url }}">
+              <span class="lab-brand__title">OU HFS Lab</span>
+              <span class="lab-brand__subtitle">University of Oklahoma</span>
+            </a>
           </div>
-          <!-- menu content -->
-         
-          <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-            <li class="nav-item">
-              <a class="nav-link" href="{{ '/members.html' | relative_url }}">
-                <i class="fa fa-address-card d-lg-inline"></i>
-                <span class="nav-link-inner--text">Members</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ '/events.html' | relative_url }}">
-                <i class="fa fa-university d-lg-inline"></i>
-                <span class="nav-link-inner--text">Events</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ '/programs.html' | relative_url }}">
-                <i class="ni ni-hat-3 d-lg-inline"></i>
-                <span class="nav-link-inner--text">Programs</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ '/seminar.html' | relative_url }}">
-                <i class="fa fa-calendar d-lg-inline"></i>
-                <span class="nav-link-inner--text">Seminar</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ '/club.html' | relative_url }}">
-                <i class="fa fa-users d-lg-inline"></i>
-                <span class="nav-link-inner--text">Club</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ '/involve.html' | relative_url }}">
-                <i class="fa fa-briefcase d-lg-inline"></i>
-                <span class="nav-link-inner--text">Get Involved</span>
-              </a>
-            </li>
-          </ul>
-          <!-- <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-          {% assign data = site.data.data %}
-            <li class="nav-item">
-              <a class="nav-link nav-link-icon" target="_blank" href="{{ data.twitter }}" 
-                 data-toggle="tooltip" title="@UUDataScience">
-                <i class="fa fa-twitter-square"></i>
-                <span class="nav-link-inner--text d-lg-none">Twitter</span>
-              </a>
-            </li>
-          </ul> -->
+          <div class="col-4 collapse-close">
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global"
+              aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </div>
       </div>
-    </nav>
+      <ul class="navbar-nav navbar-nav-hover align-items-lg-center ml-lg-auto">
+        <li class="nav-item{% if current_url == '/' or current_url == '' %} active{% endif %}">
+          <a class="nav-link" href="{{ '/index.html' | relative_url }}"><span class="nav-link-inner--text">Home</span></a>
+        </li>
+        <li class="nav-item{% if current_url == '/people.html' or current_url == '/people/' %} active{% endif %}">
+          <a class="nav-link" href="{{ '/people.html' | relative_url }}"><span class="nav-link-inner--text">People</span></a>
+        </li>
+        <li class="nav-item{% if current_url == '/research.html' or current_url == '/research/' %} active{% endif %}">
+          <a class="nav-link" href="{{ '/research.html' | relative_url }}"><span class="nav-link-inner--text">Research</span></a>
+        </li>
+        <li class="nav-item{% if current_url == '/publications.html' or current_url == '/publications/' %} active{% endif %}">
+          <a class="nav-link" href="{{ '/publications.html' | relative_url }}"><span class="nav-link-inner--text">Publications</span></a>
+        </li>
+        <li class="nav-item{% if current_url == '/awards.html' or current_url == '/awards/' %} active{% endif %}">
+          <a class="nav-link" href="{{ '/awards.html' | relative_url }}"><span class="nav-link-inner--text">Awards</span></a>
+        </li>
+        <li class="nav-item{% if current_url == '/grants.html' or current_url == '/grants/' %} active{% endif %}">
+          <a class="nav-link" href="{{ '/grants.html' | relative_url }}"><span class="nav-link-inner--text">Grants</span></a>
+        </li>
+        <li class="nav-item{% if current_url == '/teaching.html' or current_url == '/teaching/' %} active{% endif %}">
+          <a class="nav-link" href="{{ '/teaching.html' | relative_url }}"><span class="nav-link-inner--text">Teaching</span></a>
+        </li>
+        <li class="nav-item{% if current_url == '/contact.html' or current_url == '/contact/' %} active{% endif %}">
+          <a class="nav-link" href="{{ '/contact.html' | relative_url }}"><span class="nav-link-inner--text">Contact</span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,7 +1,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
-<meta name="author" content="UCDS">
-<title>{{ page.title }} - {{ site.title }}</title>
+{% assign data = site.data.data %}
+<meta name="author" content="{{ data.author }}">
+<meta name="description" content="{{ page.excerpt | default: page.header.excerpt | default: data.seo_desc | strip_html | normalize_whitespace }}">
+<title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ data.seo_title }}{% endif %}</title>
 <!-- Favicon -->
 <link rel="icon apple-touch-icon" href="{{ "/assets/img/brand/logo-favicon.png" | relative_url }}" type="image/png">
 <!-- Fonts -->

@@ -1,17 +1,12 @@
 {
-    "copy"           : "AppSeed. All rights reserved.", 
-    "email"          : "datasci@utah.edu",
-    "design"         : "Argon Design by Creative-Tim",
-
-    "seo_title"      : "Utah Center for Data Science",
-    "seo_desc"       : "Utah Center for Data Science",
-
-    "product"        : "https://github.com/utah-datascience/utah-datascience.github.io", 
-    "github"         : "https://github.com/utah-datascience/utah-datascience.github.io",
-    "facebook"       : "",
-    "twitter"        : "https://twitter.com/UUDataScience",
-    "support"        : "https://github.com/utah-datascience/utah-datascience.github.io",
-    "discord"        : "https://discord.gg/fZC6hup",
-
-    "LAST_KEY" : "NA"
+    "author"         : "OU HFS Lab",
+    "email"          : "zihokang@ou.edu",
+    "location"       : "Carson Engineering Center, University of Oklahoma, Norman, OK",
+    "design"         : "Argon Design adapted for OU HFS Lab",
+    "seo_title"      : "Human Factors and Simulation Laboratory | University of Oklahoma",
+    "seo_desc"       : "The Human Factors and Simulation Laboratory at the University of Oklahoma studies human performance, eye tracking, virtual reality, and data-driven decision making in complex human-integrated systems.",
+    "github"         : "",
+    "copyright_name" : "Human Factors and Simulation Laboratory",
+    "copyright_start": "2014",
+    "LAST_KEY"       : "NA"
 }
